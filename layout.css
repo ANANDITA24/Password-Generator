@@ -1,0 +1,319 @@
+* {  
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+  }
+   h2{
+     color: rgb(14, 199, 66);
+     /*code to make style */
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+   }
+ body { 
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /*font-family: 'Roboto', sans-serif; */
+ /* set wallpaper of technical page */
+    background-image: url('abstract.jpg');
+    font-family: raleway;
+        color: rgb(7, 6, 6);
+        margin: 0;
+    
+    background-repeat: no-repeat;
+    background-position: left;
+    background-attachment: fixed;
+ 
+    
+  
+    
+    /*background-color: #a3a2f9;*/
+  }
+
+
+
+  
+   
+  .container {  
+    padding: 1rem 1.5rem;
+    border: 1px solid black;
+    width: 350px;
+    /*code for glossy effect*/
+    
+    border-radius: 10px;
+    background-color: #fafafa;
+    
+  box-shadow: 38px 38px 56px #ed187f, 
+  -25px -25px 38px #fc5e3e;
+    /*background-color: #b9f383;*/
+  }
+   
+  h2 {
+    text-align: center;
+    padding: 15px 0;
+
+  }
+   
+
+
+
+
+
+
+  .option {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+  }
+  .result__container { 
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*code to make glass boundry */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background-color: #ffffff;
+    border: 1px solid rgb(129, 245, 145);
+    padding: 0 6px;
+  }
+   
+  .result-container #result { 
+    word-wrap: break-word;
+    max-width: calc(100% - 40px);
+  }
+   
+  .result__container #copy {
+    height: 40px;
+    width: 40px;
+    background-color: #5de9c6;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+   
+  .result__container #copy:hover {
+    background-color: #40ce80;
+    color: #ffffff;
+  }
+   
+  #generate {
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #3d68e7;
+    color: #f6f6f6;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+  }
+   
+  #generate:hover {  
+    background-color: #5bc0be;
+    color: #ffffff;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style the header with a grey background and some padding */
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+  /*position on top of the page*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 10px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+
+
+
+
+.popup .content {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-150%) scale(0);
+ width: 340px;
+ height: 490px;
+ z-index: 2;
+ text-align: center;
+ padding: 20px;
+ border-radius: 20px;
+ background: #7e8bf1;
+ box-shadow:  38px 38px 56px #1b18ed, 
+             -25px -25px 38px #5452e8;
+ z-index: 1;
+}
+
+.popup .close-btn {
+ position: absolute;
+ right: 15px;
+ top: 20px;
+ width: 35px;
+ height: 35px;
+ color: white;
+ font-size: 30px;
+ border-radius: 50%;
+ padding: 2px 5px 7px 5px;
+ background: #3f64ec;
+ box-shadow:  5px 5px 15px #4667ec, 
+             -5px -5px 15px #8899e7;
+ }
+
+.popup.active .content {
+transition: all 300ms ease-in-out;
+transform: translate(-50%,-50%) scale(1);
+}
+
+h1 {
+ text-align: center;
+ font-size: 32px;
+ font-weight: 600;
+ padding-top: 20px;
+ padding-bottom: 10px;
+}
+
+a {
+ font-weight: 600;
+ color: white;
+}
+
+.input-field .validate {
+padding: 20px;
+font-size: 16px;
+border-radius: 10px;
+border: none;
+margin-bottom: 15px;
+color: #080808;
+background: #f8f8f8;
+box-shadow: inset 5px 5px 5px #5d5dfc, 
+            inset -5px -5px 5px #6b4def;
+outline: none;
+}
+
+.first-button {
+color: white;
+font-size: 18px;
+font-weight: 500;
+padding: 30px 50px;
+border-radius: 40px;
+border: none;
+position: absolute;
+top: 50%;
+left: 20%;
+transform: translate(-50%, -50%);
+background: #377be2;
+box-shadow:  18px 18px 25px #fd8743, 
+             -15px -15px 25px #eb7944;
+transition: box-shadow .35s ease !important;
+outline: none;
+}
+
+.first-button:active {  
+background: linear-gradient(145deg, #4853eb, #89b9ed);
+box-shadow:  5px 5px 10px #4155f0, 
+             -5px -5px 10px #424ef2;
+border: none;
+}
+
+.second-button {
+color: white;
+font-size: 18px;
+font-weight: 500;
+margin-top: 20px;
+padding: 20px 30px;
+border-radius: 40px;
+border: none;
+background: #4b64f4;
+box-shadow:  8px 8px 15px #4062fc, 
+             -8px -8px 15px #1e23be;
+transition: box-shadow .35s ease !important;
+outline: none;
+}
+
+.second-button:active{
+background: linear-gradient(145deg,#303edc, #3229dd);
+box-shadow: 5px 5px 10px #5350f8, -5px -5px 10px #4284da;
+border: none;
+outline: none;
+}
+p{
+color: #ebf1f1;
+padding: 20px;
+}
+
+
+/*styl class for fogo
+
