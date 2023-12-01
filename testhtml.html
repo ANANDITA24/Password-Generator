@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PASSWORD GENERATOR APP</title>
+    <link rel="stylesheet" href="layout.css" />
+    <script src="javascpassword.js" defer></script>
+   </head>
+   
+  <body>
+    <div class="header">
+      <!--logoimage image-->
+      <a>
+        
+        <img src="abstract flower.png" alt="logo" style="width:15px;height:auto;">
+        </a>
+      <a href="#default" class="logo">Password Generator</a>
+      <div class="header-right">
+        <a class="active" href="button.html">Home</a>
+        <!--<a href="#contact">Contact</a>-->
+        <a href="about1.html">About</a>
+      </div>
+    </div>
+
+</body>
+
+
+
+<body>
+    <form id="passwordGeneratorForm">
+      <div class="container">
+        <h2>Password Generator Application</h2>
+        <div class="result__container">
+        <span id="result"></span>
+        <button id="copy">Copy</button>
+      </div>
+      <div class="options">
+        <div class="option">
+          <label>Length</label>
+          <input type="number" id="length" min="4" max="20" value="10">
+        </div>
+        <div class="option">
+          <label>Include Uppercase</label>
+          <input type="checkbox" id="uppercase" checked>
+        </div>
+        <div class="option">
+          <label>Include Numbers</label>
+          <input type="checkbox" id="numbers" checked>
+        </div>
+        <div class="option">
+          <label>Include Symbols</label>
+          <input type="checkbox" id="symbols" checked>
+        </div>
+      </div>
+      <button class="btn" id="generate" type="submit">Generate Password</button>
+      </div>
+    </form>
+
+
+      <div class="popup" id="popup-1" name="popup">
+        <div class="content">
+         <div class="close-btn" onclick="togglePopup()">
+          x </div>
+        
+     <h1>Save Password</h1> 
+     <form id="savePasswordForm" name="savePassword" >
+     <div type="text" name="Email" class="input-field"><input type="email" name="Email" placeholder="Email" class="validate" required ></div>
+       <div type="text" name="Website" class="input-field"><input type="website" name="Website" placeholder="website" class="validate" required pattern="www.+" title="www.example.com"></div>
+       <div type="text" name="Username" class="input-field"><input name="Username" placeholder="username" class="validate" required pattern="[a-zA-Z0-9]+" title="Only letters and numbers"></div>
+       <div type="password" name="Password"class="input-field"><input name="Password" type="password" placeholder="Password" class="validate" required></div>
+       <input name="Date" type="hidden" id="currentDate" > 
+    <input name="Time" type="hidden" id="currentTime" >
+         <button type="submit" id="submit" class="second-button"  onclick="checkPattern()" >Save</button>       
+        </div>
+       </div>
+         </div>
+      </form>
+
+  <button onclick="togglePopup(), clearForm()" class="first-button">Save Password</button>
+      
+    
+     </body>
+     
+
+
+
+
+</html>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxO_nkJcMZilvfQQnrjkqW2ZEzeMR_wctkR7K75GT_hJfT6GJImRrjQLOpbk3Sn31z4/exec'
+  
+  //popup function
+  function togglePopup() {
+    const popup = document.querySelector('.popup')
+    popup.classList.toggle('active')
+    
+  }
+   const form = document.forms['savePassword']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+
+
+  // //function to store date in hidden field
+  // function savedata() {
+  //   var today = new Date();
+  //   var dd = today.getDate();
+  //   var mm = today.getMonth() + 1; //January is 0!
+  //   var yyyy = today.getFullYear();
+  //   if (dd < 10) {
+  //     dd = '0' + dd
+  //   }
+  //   if (mm < 10) {
+  //     mm = '0' + mm
+  //   }
+  //   today = mm + '/' + dd + '/' + yyyy;
+  //   document.getElementById("date").value = today;
+  // }
+  
+var today1 = new Date();
+var time = today1.getHours() + ":" + today1.getMinutes() + ":" + today1.getSeconds();
+  document.getElementById("currentTime").value = time;
+
+//   date = new Date();
+// year = date.getFullYear();
+// month = date.getMonth() + 1;
+// day = date.getDate();
+// document.getElementById("currentdate").innerHTML = month + "/" + day + "/" + year;
+var today = new Date();
+var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+ // var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  document.getElementById("currentDate").value = date;
+
+  //close popup function when click on sumbit button
+  function closePopup() {
+    togglePopup()
+  }
+
+
+  
+
+//clear form on click on save password button
+function clearForm() {
+document.getElementById("savePasswordForm").reset();
+}
+//delay alert after click submit button and show alert if it is conncted to internet
+function delayAlert() {
+  setTimeout(function() {
+    if (navigator.onLine) {
+      alert("Password saved successfully");
+    } else {
+      alert("Please connect to internet, password not saved");
+    }
+  }, 100);
+}
+
+
+
+
+// function delayAlert() {
+//   setTimeout(function(){ alert("Password Saved Successfully"); }, 100);
+// }
+
+//close popup if submit button is click and if form contain correct pattern
+function checkPattern() {
+  if (document.getElementById("savePasswordForm").checkValidity()) {
+    closePopup()
+    delayAlert()
+  }
+} 
+
+
+</script>

@@ -1,0 +1,109 @@
+/*code to style signup button*/
+
+ body {
+  background-image: url("abstract.jpg");
+  font-family: raleway;
+  color: white;
+  margin: 0;
+}
+.signup-button {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 30px 50px;
+    border-radius: 40px;
+    border: none;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #377be2;
+    box-shadow:  18px 18px 25px #fd9a43, 
+                 -15px -15px 25px #eb9a44;
+    transition: box-shadow .35s ease !important;
+    outline: none;
+    /*text underline*/
+    text-decoration: none;
+}
+.signup-button:hover {
+    background: linear-gradient(145deg, #489ceb, #89b9ed);
+    box-shadow:  5px 5px 10px #41c7f0, 
+                 -5px -5px 10px #42a0f2;
+    border: none;
+    
+}
+/*style for the login button*/
+.login-button {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 30px 50px;
+    border-radius: 40px;
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #377be2;
+    box-shadow:  18px 18px 25px #fd437e, 
+                 -15px -15px 25px #eb9a44;
+    transition: box-shadow .35s ease !important;
+    outline: none;
+    text-decoration: none;
+}
+.login-button:hover {
+    background: linear-gradient(145deg, #489ceb, #89b9ed);
+    box-shadow:  5px 5px 10px #41c7f0, 
+                 -5px -5px 10px #42a0f2;
+    border: none;
+    
+}
+/*manager style*/
+.manager-button {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 30px 50px;
+    border-radius: 40px;
+    border: none;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #377be2;
+    box-shadow:  18px 18px 25px #fd437e, 
+                 -15px -15px 25px #eb9a44;
+    transition: box-shadow .35s ease !important;
+    outline: none;
+    text-decoration: none;
+}
+.manager-button:hover {
+    background: linear-gradient(145deg, #489ceb, #89b9ed);
+    box-shadow:  5px 5px 10px #41c7f0, 
+                 -5px -5px 10px #42a0f2;
+    border: none;
+    
+}
+/*position of image*/
+p{
+    background-color: rgb(250, 104, 104);
+    width: 25%;
+    /*position*/
+    position: absolute;
+    top: 26%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    margin: 20px;
+  }
+  p1{
+    background-color: rgb(250, 104, 104);
+    width: 25%;
+    /*position*/
+    position: absolute;
+    top: 70%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    margin: 20px;
+  }
